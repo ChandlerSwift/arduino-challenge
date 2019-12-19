@@ -15,6 +15,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'upload_result_key' => env('UPLOAD_RESULT_KEY', 'iiI7Za1ez9TWDYRp6nQXNHSGSspdJLzi'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
