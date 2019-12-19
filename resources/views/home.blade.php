@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <ul>
+                    @foreach($attempts as $attempt)
+                    <li>{{ $attempt->succeeded ? "Passed" : "Failed" }} challenge {{ $attempt->challenge }} at {{ $attempt->created_at }}</li>
+                    @endforeach
+                    </ul>
                 </div>
             </div>
         </div>

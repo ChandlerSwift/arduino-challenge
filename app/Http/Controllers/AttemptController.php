@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class AttemptController extends Controller
 {
     public function __construct() {
-        $this->middleware('HasToken');
+        $this->middleware('token');
     }
     /**
      * Display a listing of the resource.
@@ -28,7 +28,7 @@ class AttemptController extends Controller
      */
     public function store(Request $request)
     {
-        Attempt::create($request->input());
+        Attempt::create($request->only(['user_id', 'succeeded', 'challenge']));
     }
 
     /**
