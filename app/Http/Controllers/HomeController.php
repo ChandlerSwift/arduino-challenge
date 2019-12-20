@@ -25,6 +25,6 @@ class HomeController extends Controller
     }
 
     public function showLeaderboard() {
-        return view('leaderboard')->with('users', User::all());
+        return view('leaderboard')->with('users', User::all()); // TODO: order users
     }
 }

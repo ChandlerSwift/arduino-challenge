@@ -5,21 +5,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             @foreach($users as $user)
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+            <div class="card mb-3">
+                <div class="card-header">{{ $loop->iteration }}. {{ $user->name }}
+                    
+                        
+                <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div></div>
 
-                    <ul class="list-group">
+                <ul class="list-group list-group-flush">
                     @foreach($user->attempts as $attempt)
                     <li class="list-group-item">{{ $attempt->succeeded ? "Passed" : "Failed" }} challenge {{ $attempt->challenge }} at {{ $attempt->created_at->toDateTimeString() }}</li>
                     @endforeach
-                    </ul>
-                </div>
+                </ul>
             </div>
             @endforeach
         </div>
