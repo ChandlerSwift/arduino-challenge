@@ -18,5 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/challenges', 'HomeController@showChallenges')->name('challenges');
+Route::get('/leaderboard', 'HomeController@showLeaderboard')->name('leaderboard');
+Route::get('/documentation', 'HomeController@showDocumentation')->name('documentation');
 
 Route::resource('attempts', 'AttemptController');
